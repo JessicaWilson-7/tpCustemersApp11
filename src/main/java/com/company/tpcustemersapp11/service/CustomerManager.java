@@ -10,6 +10,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import java.util.List;
+import jakarta.persistence.TypedQuery;
 
 /**
  * Façade pour gérer les Customers.
@@ -23,7 +24,8 @@ public class CustomerManager {
     private EntityManager em;
 
     public List<Customer> getAllCustomers() {
-        return null;
+        TypedQuery<Customer> query = em.createNamedQuery("Customer.findAll", Customer.class);
+        return query.getResultList();
     }
 
     @Transactional
