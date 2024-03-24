@@ -10,8 +10,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jakartaee>10.0.0</jakartaee>
-        <maven.compiler.version>3.8.1</maven.compiler.version>
-        <maven.war.version>3.3.2</maven.war.version>
+        <maven.compiler.version>3.13.0</maven.compiler.version>
+        <maven.war.version>3.4.0</maven.war.version>
     </properties>
     
    
