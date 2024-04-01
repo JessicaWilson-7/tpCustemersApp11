@@ -30,7 +30,7 @@ public class CustomerManager {
 
     @Transactional
     public Customer update(Customer customer) {
-        return null;
+        return em.merge(customer);
     }
 
     @Transactional

@@ -16,6 +16,7 @@ import com.company.tpcustemersapp11.entity.Discount;
  *
  * @author USER
  */
+@RequestScoped
 public class DiscountManager {
 
     @PersistenceContext(unitName = "customerPU")
