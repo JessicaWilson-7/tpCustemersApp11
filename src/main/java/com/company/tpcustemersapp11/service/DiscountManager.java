@@ -22,7 +22,7 @@ public class DiscountManager {
     private EntityManager entityManager;
 
     public List<Discount> getAllDiscounts() {
-        TypedQuery<Discount> query = entityManager.createNamedQuery("Discount.findAll", Discount.class);
+        TypedQuery<Discount> query = entityManager.createNamedQuery("Discount.findAllOrderByRateDESC", Discount.class);
         return query.getResultList();
     }
 
