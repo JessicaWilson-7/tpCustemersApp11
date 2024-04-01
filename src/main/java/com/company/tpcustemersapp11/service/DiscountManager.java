@@ -4,41 +4,30 @@
  */
 package com.company.tpcustemersapp11.service;
 
-import com.company.tpcustemersapp11.entity.Customer;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import java.util.List;
 import jakarta.persistence.TypedQuery;
+import com.company.tpcustemersapp11.entity.Discount;
 
 /**
- * Façade pour gérer les Customers.
  *
  * @author USER
  */
-@RequestScoped
-public class CustomerManager {
+public class DiscountManager {
 
     @PersistenceContext(unitName = "customerPU")
-    private EntityManager em;
+    private EntityManager entityManager;
 
-    public List<Customer> getAllCustomers() {
-        TypedQuery<Customer> query = em.createNamedQuery("Customer.findAll", Customer.class);
+    public List<Discount> getAllDiscounts() {
+        TypedQuery<Discount> query = entityManager.createNamedQuery("Discount.findAll", Discount.class);
         return query.getResultList();
     }
 
-    @Transactional
-    public Customer update(Customer customer) {
-        return null;
+    public Discount findById(String code) {
+        return entityManager.find(Discount.class, code);
     }
 
-    @Transactional
-    public void persist(Customer customer) {
-        em.persist(customer);
-    }
-    
-    public Customer findById(int idCustomer) {
-        return em.find(Customer.class, idCustomer);
-    }
 }
